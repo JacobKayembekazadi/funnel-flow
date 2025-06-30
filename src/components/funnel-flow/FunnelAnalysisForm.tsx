@@ -61,10 +61,10 @@ const FunnelAnalysisForm: React.FC<FunnelAnalysisFormProps> = ({
           <div>
             <label className="block text-sm font-medium text-muted-foreground mb-2">What are we analyzing?</label>
             <div className="flex items-center justify-start space-x-2 bg-input p-1 rounded-lg border border-border">
-              <button type="button" onClick={() => setInputType('link')} className={cn('w-full px-4 py-2 rounded-md transition-all duration-200 text-sm font-semibold', inputType === 'link' ? 'bg-indigo-600 text-white shadow' : 'text-slate-300 hover:bg-slate-700')}>
+              <button type="button" onClick={() => setInputType('link')} suppressHydrationWarning className={cn('w-full px-4 py-2 rounded-md transition-all duration-200 text-sm font-semibold', inputType === 'link' ? 'bg-indigo-600 text-white shadow' : 'text-slate-300 hover:bg-slate-700')}>
                 Landing Page Link
               </button>
-              <button type="button" onClick={() => setInputType('text')} className={cn('w-full px-4 py-2 rounded-md transition-all duration-200 text-sm font-semibold', inputType === 'text' ? 'bg-indigo-600 text-white shadow' : 'text-slate-300 hover:bg-slate-700')}>
+              <button type="button" onClick={() => setInputType('text')} suppressHydrationWarning className={cn('w-full px-4 py-2 rounded-md transition-all duration-200 text-sm font-semibold', inputType === 'text' ? 'bg-indigo-600 text-white shadow' : 'text-slate-300 hover:bg-slate-700')}>
                 Describe Offer
               </button>
             </div>
@@ -82,7 +82,7 @@ const FunnelAnalysisForm: React.FC<FunnelAnalysisFormProps> = ({
         {error && <p className="text-red-400 mt-2 text-sm text-center">{error}</p>}
         
         <div className="mt-6 text-center">
-          <Button type="submit" disabled={isLoading} className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center mx-auto h-auto">
+          <Button type="submit" disabled={isLoading} suppressHydrationWarning className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center mx-auto h-auto">
             {isLoading ? 'Analyzing...' : 'Generate Audit'}
             {!isLoading && <ArrowRight className="ml-2 w-5 h-5" />}
           </Button>
